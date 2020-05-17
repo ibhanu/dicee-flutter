@@ -6,7 +6,11 @@ void main() {
       home: Scaffold(
         backgroundColor: Colors.red,
         appBar: AppBar(
-          title: Text('Dicee'),
+          leading: Icon(
+            Icons.gamepad,
+            color: Colors.white,
+          ),
+          title: Text('Dice Roller'),
           backgroundColor: Colors.red,
         ),
         body: DicePage(),
@@ -18,6 +22,27 @@ void main() {
 class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Center(
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: FlatButton(
+              onPressed: () {
+                print('Left button got pressed');
+              },
+              child: Image.asset('images/dice1.png'),
+            ),
+          ),
+          Expanded(
+            child: FlatButton(
+              onPressed: () {
+                print('Right button got pressed');
+              },
+              child: Image.asset('images/dice4.png'),
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
